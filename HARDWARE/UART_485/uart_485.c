@@ -130,7 +130,7 @@ void RS485_Receive_Data(u8 *buf,u8 *len)
 u8 water_err (void)
 {
 	err_shui_num++;
-	if(err_shui_num<10000){
+	if(err_shui_num*50<2000){
 		return 0;
 	}
 	err_shui_num=0;
