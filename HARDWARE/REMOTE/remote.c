@@ -164,6 +164,7 @@ void Remote_send (u8* buff,u8 brand)
 //自定义键值发送，1，开，2，关，3，升温，4，降温
 void Remote_send_USER (u8 keytype)
 {	
+	
 	u16 i=0;
 	Receive_Cmd(DISABLE);//发送之前关闭接收
 		for (i=0;i<CUPTURE_NUM;i++)
@@ -195,6 +196,7 @@ void Remote_send_USER (u8 keytype)
 	Remote_IRQHandler=Remote_USER;
 	TIM_Cmd(TIM1, ENABLE);  //脉冲长度计数开始
 //	Remote_Start(); //开始PWM输出
+
 }
 
 
@@ -220,7 +222,6 @@ void Remote_USER (void)
 		TIME_BUZZ=0;//清除忙标志
 		TIM_Cmd(TIM1, DISABLE); //发送完成，关闭自身
 		Remote_End();//关PWM
-//		Receive_Cmd(DISABLE);//发送接收
 	}
 	if (RETOME_TIMES>=CUPTURE_NUM)
 	{

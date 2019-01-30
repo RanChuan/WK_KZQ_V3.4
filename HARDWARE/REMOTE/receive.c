@@ -13,7 +13,7 @@ void 	(*Receive_IRQHandler) (void );
 #define K_R  20  //包容值
 #define K_L  (20)  //包容值
 
-static u8 RECEIVE_ENABLE=1;//允许接收
+static u8 RECEIVE_ENABLE=0;//允许接收
 //获取捕获到的红外键码
 
 u16 RCV_NUM=0;//捕获到的边沿个数，实时计数
@@ -115,7 +115,7 @@ void Receive_GREE (void )
 		cupture[RCV_NUM]= TIM_GetCapture2(TIM2);//读取捕获值
 	TIM_SetCounter(TIM2,0);//计数器设置为0
 	RCV_NUM++;
-	if (RCV_NUM==CUPTURE_NUM)
+	if (RCV_NUM>=CUPTURE_NUM)
 	{
 		RCV_NUM=0;
 		RECEIVE_ENABLE=0;//不再允许接收
@@ -135,10 +135,12 @@ void Receive_USER (void )
 		CHANG_FALL;
 	else
 		CHANG_RISE;
-//	if (RECEIVE_ENABLE) 
+	if (RECEIVE_ENABLE) 
+	{
 		cupture[RCV_NUM]= TIM_GetCapture2(TIM2);//读取捕获值
-	TIM_SetCounter(TIM2,0);//计数器设置为0
-	RCV_NUM++;
+		TIM_SetCounter(TIM2,0);//计数器设置为0
+		RCV_NUM++;
+	}
 }
 
 
@@ -197,15 +199,22 @@ void Receive_init (void)
 	TIM_ITConfig(TIM2, TIM_IT_CC2, ENABLE);
 	TIM_ITConfig(TIM2, TIM_IT_Update, ENABLE);
 	//打开捕获定时器
-	TIM_Cmd(TIM2,ENABLE );
+	Receive_Cmd(DISABLE);
 
 }
 
 
 void Receive_Cmd (FunctionalState t)
 {
-		TIM_Cmd(TIM2,t );
-
+	TIM_Cmd(TIM2,t );
+	if (t==ENABLE)
+	{
+		RECEIVE_ENABLE=1;
+	}
+	else
+	{
+		RECEIVE_ENABLE=0;
+	}
 }
 
 

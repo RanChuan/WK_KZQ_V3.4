@@ -474,6 +474,7 @@ void cmd_0x08 (u8 *buff)
 		}
 		KT_USER_CMD=buff[8];
 		Clear_Cupture();//清除已存在的捕获缓冲器数据
+		Receive_Cmd(ENABLE);
 		Return_NEW(buff[4],ERR_SUCCESS);
 	}
 	

@@ -601,7 +601,14 @@
           </Files>
         </Group>
         <Group>
-          <GroupName>modbus</GroupName>
+          <GroupName>ReadMe</GroupName>
+          <Files>
+            <File>
+              <FileName>ReadMe.txt</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\ReadMe.txt</FilePath>
+            </File>
+          </Files>
         </Group>
       </Groups>
     </Target>

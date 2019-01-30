@@ -1460,7 +1460,7 @@ void Cfg_Model (void)
 		MY_OFFTIME=0;//重置自动关机计数器，防止自动关机
 		if (KT_USER_CMD>=1&&KT_USER_CMD<=4)
 		{
-			Receive_Cmd(ENABLE);
+//			Receive_Cmd(ENABLE);
 			if (Receive_GetState()) 
 			{
 				//如果接收了遥控键值，退出学习模式
@@ -1469,6 +1469,7 @@ void Cfg_Model (void)
 				control_run(DEVICE_ON,0);
 				control_run(CMD_UP,0);
 				control_run(CMD_DOWN,0);
+				Receive_Cmd(DISABLE);
 			}
 		}
 	}

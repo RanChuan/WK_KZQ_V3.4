@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\output\moban.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\output\moban.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5050106: Last Updated: Fri Jan 11 14:09:58 2019
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5050106: Last Updated: Wed Jan 30 10:27:41 2019
 <BR><P>
 <H3>Maximum Stack Usage =        600 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -659,9 +659,9 @@ Global Symbols
 <P><STRONG><a name="[55]"></a>Cfg_Model</STRONG> (Thumb, 318 bytes, Stack size 8 bytes, cmd.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 108<LI>Call Chain = Cfg_Model &rArr; Receive_SaveKey &rArr; Save_Key_Up &rArr; STMFLASH_Write &rArr; STMFLASH_Write_NoCheck &rArr; FLASH_ProgramHalfWord &rArr; FLASH_WaitForLastOperation
 </UL>
-<BR>[Calls]<UL><LI><a href="#[91]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Receive_SaveKey
-<LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Receive_GetState
-<LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Receive_Cmd
+<BR>[Calls]<UL><LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Receive_SaveKey
+<LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Receive_GetState
+<LI><a href="#[91]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Receive_Cmd
 <LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MyDevice_On
 <LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Get_Key
 <LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Config_Init
@@ -734,11 +734,12 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[3c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Get_cmd_NEW_MODE
 </UL>
 
-<P><STRONG><a name="[9e]"></a>cmd_0x08</STRONG> (Thumb, 184 bytes, Stack size 8 bytes, cmd1.o(.text))
+<P><STRONG><a name="[9e]"></a>cmd_0x08</STRONG> (Thumb, 190 bytes, Stack size 8 bytes, cmd1.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 80<LI>Call Chain = cmd_0x08 &rArr; Return_NEW &rArr; AS32_TX_none &rArr; USART1_tx_bytes
 </UL>
 <BR>[Calls]<UL><LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Clear_Cupture
 <LI><a href="#[9c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Return_NEW
+<LI><a href="#[91]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Receive_Cmd
 <LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;control_run
 </UL>
 <BR>[Called By]<UL><LI><a href="#[3c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Get_cmd_NEW_MODE
@@ -825,7 +826,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[3c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Get_cmd_NEW_MODE
 </UL>
 
-<P><STRONG><a name="[a9]"></a>cmd_0x01</STRONG> (Thumb, 370 bytes, Stack size 48 bytes, cmd1.o(.text))
+<P><STRONG><a name="[a9]"></a>cmd_0x01</STRONG> (Thumb, 368 bytes, Stack size 48 bytes, cmd1.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 80<LI>Call Chain = cmd_0x01 &rArr; AS32_TX_none &rArr; USART1_tx_bytes
 </UL>
 <BR>[Calls]<UL><LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Get_Crc16
@@ -1346,10 +1347,9 @@ Global Symbols
 <P><STRONG><a name="[95]"></a>TIM_Cmd</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Remote_send_USER
 <LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Remote_send
-<LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Receive_Cmd
+<LI><a href="#[91]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Receive_Cmd
 <LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM4_TIMEout_init
 <LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Remote_init
-<LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Receive_init
 <LI><a href="#[db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Remote_USER
 <LI><a href="#[d9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Remote_MIDEA
 <LI><a href="#[d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Remote_GREE
@@ -1792,7 +1792,7 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[da]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_SetCounter
 <LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_Cmd
-<LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Receive_Cmd
+<LI><a href="#[91]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Receive_Cmd
 <LI><a href="#[de]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Load_Key_Up
 <LI><a href="#[dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Load_Key_On
 <LI><a href="#[dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Load_Key_Off
@@ -1813,7 +1813,7 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f10x_md.o(RESET)
 </UL>
-<P><STRONG><a name="[90]"></a>Receive_GetState</STRONG> (Thumb, 28 bytes, Stack size 0 bytes, receive.o(.text))
+<P><STRONG><a name="[8f]"></a>Receive_GetState</STRONG> (Thumb, 28 bytes, Stack size 0 bytes, receive.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Cfg_Model
 </UL>
 
@@ -1821,10 +1821,10 @@ Global Symbols
 
 <P><STRONG><a name="[9f]"></a>Clear_Cupture</STRONG> (Thumb, 32 bytes, Stack size 0 bytes, receive.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_0x08
-<LI><a href="#[91]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Receive_SaveKey
+<LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Receive_SaveKey
 </UL>
 
-<P><STRONG><a name="[91]"></a>Receive_SaveKey</STRONG> (Thumb, 64 bytes, Stack size 8 bytes, receive.o(.text))
+<P><STRONG><a name="[90]"></a>Receive_SaveKey</STRONG> (Thumb, 64 bytes, Stack size 8 bytes, receive.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 100<LI>Call Chain = Receive_SaveKey &rArr; Save_Key_Up &rArr; STMFLASH_Write &rArr; STMFLASH_Write_NoCheck &rArr; FLASH_ProgramHalfWord &rArr; FLASH_WaitForLastOperation
 </UL>
 <BR>[Calls]<UL><LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Clear_Cupture
@@ -1841,7 +1841,7 @@ Global Symbols
 <LI><a href="#[da]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_SetCounter
 </UL>
 
-<P><STRONG><a name="[e6]"></a>Receive_USER</STRONG> (Thumb, 84 bytes, Stack size 8 bytes, receive.o(.text))
+<P><STRONG><a name="[e6]"></a>Receive_USER</STRONG> (Thumb, 90 bytes, Stack size 8 bytes, receive.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = Receive_USER
 </UL>
 <BR>[Calls]<UL><LI><a href="#[e5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_GetCapture2
@@ -1849,29 +1849,31 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> receive.o(.text)
 </UL>
-<P><STRONG><a name="[5d]"></a>Receive_init</STRONG> (Thumb, 192 bytes, Stack size 40 bytes, receive.o(.text))
+<P><STRONG><a name="[91]"></a>Receive_Cmd</STRONG> (Thumb, 34 bytes, Stack size 8 bytes, receive.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = Receive_Cmd
+</UL>
+<BR>[Calls]<UL><LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_Cmd
+</UL>
+<BR>[Called By]<UL><LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_0x08
+<LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Remote_send_USER
+<LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Receive_init
+<LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Cfg_Model
+</UL>
+
+<P><STRONG><a name="[5d]"></a>Receive_init</STRONG> (Thumb, 190 bytes, Stack size 40 bytes, receive.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 76<LI>Call Chain = Receive_init &rArr; TIM_ICInit &rArr; TI1_Config
 </UL>
 <BR>[Calls]<UL><LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_ICInit
 <LI><a href="#[e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_SetBits
 <LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_TimeBaseInit
 <LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_ITConfig
-<LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_Cmd
+<LI><a href="#[91]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Receive_Cmd
 <LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RCC_APB1PeriphClockCmd
 <LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RCC_APB2PeriphClockCmd
 <LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NVIC_Init
 <LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_Init
 </UL>
 <BR>[Called By]<UL><LI><a href="#[53]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;System_Init
-</UL>
-
-<P><STRONG><a name="[8f]"></a>Receive_Cmd</STRONG> (Thumb, 16 bytes, Stack size 8 bytes, receive.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = Receive_Cmd
-</UL>
-<BR>[Calls]<UL><LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_Cmd
-</UL>
-<BR>[Called By]<UL><LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Remote_send_USER
-<LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Cfg_Model
 </UL>
 
 <P><STRONG><a name="[e8]"></a>ReceiveEnd_IRQHandler</STRONG> (Thumb, 28 bytes, Stack size 0 bytes, receive.o(.text))
@@ -1957,7 +1959,7 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;STMFLASH_Write
 </UL>
-<BR>[Called By]<UL><LI><a href="#[91]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Receive_SaveKey
+<BR>[Called By]<UL><LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Receive_SaveKey
 </UL>
 
 <P><STRONG><a name="[e1]"></a>Save_Key_Off</STRONG> (Thumb, 16 bytes, Stack size 8 bytes, stmflash.o(.text))
@@ -1965,7 +1967,7 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;STMFLASH_Write
 </UL>
-<BR>[Called By]<UL><LI><a href="#[91]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Receive_SaveKey
+<BR>[Called By]<UL><LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Receive_SaveKey
 </UL>
 
 <P><STRONG><a name="[e2]"></a>Save_Key_Up</STRONG> (Thumb, 16 bytes, Stack size 8 bytes, stmflash.o(.text))
@@ -1973,7 +1975,7 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;STMFLASH_Write
 </UL>
-<BR>[Called By]<UL><LI><a href="#[91]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Receive_SaveKey
+<BR>[Called By]<UL><LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Receive_SaveKey
 </UL>
 
 <P><STRONG><a name="[e3]"></a>Save_Key_Down</STRONG> (Thumb, 16 bytes, Stack size 8 bytes, stmflash.o(.text))
@@ -1981,7 +1983,7 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;STMFLASH_Write
 </UL>
-<BR>[Called By]<UL><LI><a href="#[91]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Receive_SaveKey
+<BR>[Called By]<UL><LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Receive_SaveKey
 </UL>
 
 <P><STRONG><a name="[dc]"></a>Load_Key_On</STRONG> (Thumb, 16 bytes, Stack size 4 bytes, stmflash.o(.text))
