@@ -138,7 +138,7 @@ void cmd_0x01 (u8 *buff)
 		data[9+8]=0;
 		data[9+9]=CS_CANTCMD;
 		data[9+11]=WARN_SHIDU;
-		data[9+11]=1;
+		data[9+11]=WARN_SHIDU;
 	}
 	else if (MY_STYLE==MYSTYLE_JS)//加湿和除湿使用同一个字节
 	{
@@ -152,7 +152,6 @@ void cmd_0x01 (u8 *buff)
 		data[9+7]=CS_STATE>>8;
 		data[9+8]=CS_STATE;
 		data[9+11]=WARN_WATER;
-//		data[9+11]=1;
 	}
 	else if (MY_STYLE==MYSTYLE_JH)
 	{
